@@ -1,0 +1,81 @@
+/* Getting Map Id */
+#map{
+	height: 450px;
+	width: auto;
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	padding: 2px 2px ;
+	border-color: blue;
+	box-sizing: border-box;
+	margin: 10px 20px 20px 20px;
+	border-radius: 2px;
+}
+
+body{
+	background-color: orange;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/*p {
+color: black;
+}*/
+
+/* Creating Web Header */
+.header {
+	overflow: hidden;
+	background-color: black;
+	padding: 20px 10px;
+}
+
+.header a {
+  float: center;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+/* Create right header */
+.header a.active {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+}
+.header-right {
+  float: right;
+}
+
+/* Showing mouse position on map */
+.ol-mouse-position {
+	right: 42px;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	text-align: center;
+	padding: 2.5px;
+	background: rgba(0, 60, 136, 0.5);
+	background-clip: padding-box;
+	border: 3px solid rgba(255, 255, 255, 0.4);
+	border-radius: 4px;
+}
+.ol-overviewmap {
+	left: 8px;
+	bottom: 34px;
+}
+
+.popover {
+	width: 200px;
+	height: auto;
+}
+
+iframe {
+	border: 20px;
+	height: 450px;
+	width: 100%;
+	position: center;
+}

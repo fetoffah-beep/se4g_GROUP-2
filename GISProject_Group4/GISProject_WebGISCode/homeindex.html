@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="homecss.css">
+</head>
+<body>
+	<div class="header"> <! header start >
+		<a href="#default" class="logo" id="univ">Politecnico di Milano</a>
+		<div class="header-left"> <! left header start >
+			<a href="#map" id="gis">Geographic Information System Lab Project 2019</a>
+		</div> <! left header end >
+	</div> <! header end >
+
+	<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">About</button>
+	<button class="tablink" onclick="openPage('Contact', this, 'gray')">The Method</button>
+	<button class="tablink" onclick="openPage('News', this, 'brown')">Result and Conclusion</button>
+	<div id="Home" class="tabcontent">
+		<center><h3>INTRODUCTION</h3></center>
+		<!-- <p>Hello this is our group project</p> -->
+		<p class="content-head">General Introduction</p>
+		<p class="content-body">Walking is the most basic yet an indispensable mode of transportation since the beginning of
+			human civilization. However, due to the increase in the number of vehicles and human population
+			within the urban areas, mobility of pedestrian is gradually becoming a global concern. While
+			facilitating modern means of transport, the importance of walking in terms of health benefits and
+			necessity should not be overlooked. Therefore, it is inevitable to provide required conditions for
+			pedestrians during road traffic planning in order to encourage the walking practice, otherwise,
+			pedestrians will be deprived from a smooth and safe movement under the influence of complex
+		motorized vehicular movement.</p>
+		<p></p>
+		<p class="content-head">Aim</p>
+		<p class="content-body">For the current project, the Pedestrian LOS Model is aimed at evaluating walking conditions on
+		some of the selected road and street corridors in Milan urban environment. In addition, the enhanced PLOS was culculated by considering additional pararameters, namely number of light, presence of curb ramp, crossing, transport stop, point of interest and public service.</p>
+	</div>
+	<div id="Contact" class="tabcontent">
+		<center><h3>DATA COLLECTION AND DATA PROCESSING</h3></center>
+		<p class="content-head">Tools</p>
+		<p class="subcontent-body">Epicollect</p>
+		<p class="content-body">Epicollect is a free/open source data collection mobile and web application, designed for the
+			creation and generation of data collection forms with downloadable database capabilities. The
+		application is very easy to set up, extremely useful, intuitive and straight forward to use.</p>
+		<p class="subcontent-body">QGis</p>
+		<p class="content-body">QGIS (Quantum GIS) is a free and open source geographic information system (GIS) software,
+			allowing users to enter, edit, process, and analyze spatial information, in addition to composingand exporting graphical outputs. The software can easily integrate with other open-source GIS
+		packages, including GeoServer, PostGIS, GRASS GIS, MapServer among others.</p>
+		<p class="subcontent-body">GeoServer</p>
+		<p class="content-body">GeoServer is an open source web server software, written in Javascript language, designed for
+			interoperability, that allows users to enter, edit, publish and share geospatial data from any major
+			spatial data sources using open standards. Being a community-driven project, it’s development
+		and maintenance is supported by diverse sources.</p>
+		<p class="content-head">Procedure</p>
+		<p class="subcontent-body">Data Collection and Processing</p>
+		<p class="content-body">During the project, field data was collected using Epicollet. the data was collected in point form
+			which was later transferred to QGis for further processing and analysis. Some of the in-put field
+		data collected include :</p>
+		<p id="point"> > Width of the Sidewalk</p>
+		<p id="point"> > Counts of Streetlights</p>
+		<p id="point"> > Width of the Buffer</p>
+		<p id="point"> > Parking Space</p>
+		<p id="point"> > Curb Ramps</p>
+		<p class="content-body">The processing activity was undertaken to enrich each geometry of the road network layer with
+		missing indicators.</p>
+
+		<!-- Putting Data Collection Images -->
+		<div>
+			<div class="row">
+				<div class="column">
+					<img id="myImg1" src="images/PHOTO-2020-01-04-12-37-38.jpg" alt="Sidewalk with Buffer" style="width:100%">
+				</div>
+				<div class="column">
+					<img id="myImg2" src="images/PHOTO-2020-01-04-12-35-14.jpg" alt="Sidewalk and Parking Space" style="width:100%">
+				</div>
+				<div class="column">
+					<img id="myImg3" src="images/PHOTO-2020-01-04-12-36-12.jpg" alt="Sidewalk" style="width:100%">
+				</div>
+			</div>
+		</div>
+
+		<!-- Image as modal -->
+		<div id="myModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="imgmodal">
+			<div id="caption"></div>
+		</div>
+
+
+		<p class="content-body">During the process, operations such as buffer, intersection and manipulation of the attribute table
+			was undertaken to associate each collected point to the corresponding road network geometry and
+			to aggregate multiple point measurements by means of a count and average to compute a single
+		indicator for each road network geometry.</p>
+	</div>
+	<div id="News" class="tabcontent">
+		<center><h3>RESULT AND CONCLUSION</h3></center>
+		<p class="content-head">Result</p>
+		<p class="content-body">Streets and sidewalk infrastructure with different characteristics can be evaluated with this PLOS
+			method as it includes the highly important sidewalk factors that are used to evaluate the service
+			quality of sidewalks that can be used in various contexts. From the analysis, the model is highly
+		sensitive to the width of the side walk and the PLOS values ranges from 1.09 to 2.93. By considering the additional parameters, the enhanced PLOS was derived from the original PLOS value. These parameters increases the walkability of some road segements.</p>
+		<button id="mybutton" class="float-left submit-button">Click Here</button>
+		<a>To see the map</a>
+		<!-- PLOS Table -->
+		<div>
+			<table style="width:100%">
+				<caption style="Text-align: Left">Table showing the PLOS INFO</caption>
+				<tr>
+					<th>Segment ID</th>
+					<th>Road Name</th>
+					<th>Number of Lightning</th>
+					<th>Road PLOS</th>
+					<th>Enhanced PLOS</th>
+					<th>PLOS CLASS</th>
+					<th>Enhanced PLOS CLASS</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Via Livigno</td>
+					<td>0</td>
+					<td>1.46</td>
+					<td>1.09</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Via Livigno</td>
+					<td>2</td>
+					<td>1.37</td>
+					<td>0.87</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Via Livigno</td>
+					<td>2</td>
+					<td>2.39</td>
+					<td>1.89</td>
+					<td>B</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Via Giacinto Collegno</td>
+					<td>4</td>
+					<td>2.93</td>
+					<td>2.56</td>
+					<td>C</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Via Giuseppe Guerzoni</td>
+					<td>0</td>
+					<td>2.63</td>
+					<td>2.51</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Via Caianello</td>
+					<td>2</td>
+					<td>1.32</td>
+					<td>0.82</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Via Edoardo Jenner</td>
+					<td>5</td>
+					<td>2.12</td>
+					<td>1.87</td>
+					<td>B</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Via privata Angiolo Maffuci</td>
+					<td>8</td>
+					<td>1.39</td>
+					<td>0.77</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Via privata Angiolo Maffuci</td>
+					<td>9</td>
+					<td>1.51</td>
+					<td>0.89</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Via Enrico Annibale Butti</td>
+					<td>5</td>
+					<td>2.35</td>
+					<td>2.10</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>11</td>
+					<td>Via Maffeo Pantaleoni</td>
+					<td>0</td>
+					<td>1.44</td>
+					<td>1.19</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Via Cilento</td>
+					<td>2</td>
+					<td>1.09</td>
+					<td>0.97</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Via Angelo Masina</td>
+					<td>2</td>
+					<td>2.69</td>
+					<td>2.32</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>14</td>
+					<td>Via Carlo Cafiero</td>
+					<td>4</td>
+					<td>1.12</td>
+					<td>0.75</td>
+					<td>A</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>15</td>
+					<td>Via Enrico Annibale Butti</td>
+					<td>6</td>
+					<td>2.17</td>
+					<td>1.92</td>
+					<td>B</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>16</td>
+					<td>Via Giuseppe Guerzoni</td>
+					<td>5</td>
+					<td>2.54</td>
+					<td>2.17</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>17</td>
+					<td>Via Edoardo Jenner</td>
+					<td>10</td>
+					<td>2.75</td>
+					<td>2.25</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>18</td>
+					<td>Via Giuseppe Guerzoni</td>
+					<td>13</td>
+					<td>2.89</td>
+					<td>2.52</td>
+					<td>C</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>19</td>
+					<td>Via Enrico Annibale Butti</td>
+					<td>1</td>
+					<td>2.54</td>
+					<td>2.17</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+				<tr>
+					<td>20</td>
+					<td>Via Edoardo Jenner</td>
+					<td>8</td>
+					<td>2.68</td>
+					<td>2.43</td>
+					<td>B</td>
+					<td>B</td>
+				</tr>
+			</table> 
+		</div>
+
+	</div>
+	
+	<script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+	<title>GIS-Lab-Project-2019</title>
+	<script src="libraries/v6.1.1/build/ol.js"></script>
+	<script src="libraries/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+	<script src="http://rawgit.com/walkermatt/ol-layerswitcher/master/dist/ol-layerswitcher.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-
+	CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+	<script src="libraries/v6.1.1/apidoc/scripts/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="libraries/v6.1.1/apidoc/styles/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="libraries/v6.1.1/css/ol.css">
+	<link rel="stylesheet" href="http://rawgit.com/walkermatt/ol-layerswitcher/master/src/ol-layerswitcher.css">
+	<link rel="stylesheet" href="main.css">
+
+
+</head>
+<body>
+	<div class="header">
+		<a href="#default" class="logo" id="univ">Politecnico di Milano</a>
+		<div class="header-right">
+			<a id="home" class="active" href="#home">Home</a>
+			<a class="active" href="#group" button onclick="myfunction()">Group 4</a>
+		</div>
+	</div>
+
+	<div id="map">
+		<div id="popup"></div>
+	</div>
+
+	<div id="get-feature-info">&nbsp;</div>
+	
+	<div id="nodelist">
+	        <em>Click on the point to get PLOS INFO</em>
+	</div>
+	<script src="map.js"></script>
+</body>
+</html>
+
+
