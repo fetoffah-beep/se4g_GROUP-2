@@ -1,11 +1,48 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h1>PLOS Calculation Example</h1>
-    <p>Put description here</p>
+<div class="container text-justify">
+    <h1 class="text-center">PLOS Calculation </h1>
+    <p>
+        Oftentimes, concerns of pedestrians are left out in road design. However, regular interaction of road
+        managers and local government authorities with pedestrians would provide valuable information that can
+        facilitate planning to make the streets more useful for citizens.
+        Pedestrian level of service (PLOS) is a model that aims at indexing the level of safety of pedestrians
+        on the roads. It uses several parameters measured on the road as input and assign index to the result
+        for classification. Mathematically, PLOS is defined as
+        <br>
+        <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/PLOS.jpg?raw=true" style = 'width: 100%;'>
+        <br>
+        <br>
+        where
+            <ul>Vm = count of vehicles an hour </ul>
+            <ul> Nth = number of thorough lanes in the subject direction of travel </ul>
+            <ul> SR = vehicle speed (km/h) </ul>
+            <ul> Wv = sum of the width of the outside lane, bike lane and shoulder (metres) </ul>
+            <ul> W1 = sum of the width of the bike lane and the shoulder (metres) </ul>
+            <ul> ppk = proportion of parallel on-street parking occupied in the analysed period. </ul>
+            <ul> Wbuf = width of a buffer (meters) </ul>
+            <ul> WaA = sidewalk width (meters) </ul>
+            <ul> fsw = coefficient of the sidewalk width </ul>
+    <br>
+
+    The indices used for the classification include
+    <ul>
+        <br> •	PLOS A (≤ 2): Highly pedestrian oriented environment, ample sidewalk space
+        <br> •	PLOS B (> 2 and ≤ 2.75): Streets with many pedestrian safety and comfort features
+        <br> •	PLOS C (> 2.75 and ≤ 3.5): Standard sidewalk, some deficiencies in pedestrian facility design and/or higher vehicle traffic
+        <br> •	PLOS D (> 3.5 and ≤ 4.25): Streets adequate for pedestrian use but has frequent deficiencies for width and clearance
+        <br> •	PLOS E (> 4.25 and ≤ 5): Streets inadequate for pedestrian use, high level of interaction with traffic
+        <br> •	PLOS F (> 5): Extremely car-oriented environment, roads preliminary designed for high volumes traffic
+    </ul>
+
+    </p>
+</div>
+<br>
+<br>
     <div class="container">
         <div class="row">
           <div class="col">
-            <img class="float-left" src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot" 
+            <img class="float-left" src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot"
                  width="400" height="400">
           </div>
           <div class="col">
@@ -17,7 +54,7 @@
     <div class="container">
         <div class="row">
           <div class="col">
-            <img class="float-right" src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot" 
+            <img class="float-right" src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot"
                  width="400" height="400">
           </div>
           <div class="col">
@@ -29,7 +66,7 @@
     <div class="container">
         <div class="row">
           <div class="col">
-            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/histogram_subplot.png?raw=true" alt="Histogram Plot" 
+            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/histogram_subplot.png?raw=true" alt="Histogram Plot"
                  width="400" height="400">
           </div>
           <div class="col">
@@ -37,16 +74,16 @@
           </div>
         </div>
     </div>
- 
+
     <!--
     <div class="container">
         <div class="row">
           <div class="col">
-            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot" 
+            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot"
                width="400" height="400">
           </div>
           <div class="col">
-            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot" 
+            <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot"
                width="400" height="400">
           </div>
         </div>
@@ -57,15 +94,15 @@
 <!--
     <div class="row">
         <div class="col-4">
-          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot" 
+          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/correlo_no%20reg.png?raw=true" alt="Correlation Plot"
                width="500" height="500">
         </div>
         <div class="column">
-          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot" 
+          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/pairplot.png?raw=true" alt="Pairplot"
                width="500" height="500">
         </div>
         <div class="column">
-          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/histogram_subplot.png?raw=true" alt="Histogram Plot" 
+          <img src="https://github.com/fetoffah-beep/se4g_GROUP-2/blob/master/Static_analysis/histogram_subplot.png?raw=true" alt="Histogram Plot"
                width="500" height="500">
         </div>
     </div>
