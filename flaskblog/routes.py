@@ -77,3 +77,8 @@ def post_comment():
         flash('Comment has been posted', 'success') ## bootstrap
         return redirect(url_for('map'))
     return render_template('comment.html', title='Comments', form=form)
+
+@app.route('/plos')
+@login_required
+def plos():
+    return render_template('plos.html', title='plos')
