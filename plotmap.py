@@ -8,9 +8,12 @@ from bokeh.models import ColumnDataSource, Select, HoverTool
 from bokeh.models import DataTable, TableColumn
 from bokeh.plotting import figure, output_file, show, save
 from bokeh.transform import factor_cmap, factor_mark, cumsum
-from flaskblog.dataedit import importdf, importgdf, dftype
 from bokeh.tile_providers import CARTODBPOSITRON, get_provider
 from bokeh.palettes import Category20c
+
+
+# Importing the dataframe
+from flaskblog.dataedit import importdf, importgdf, dftype
 
 gdf = importgdf()
 df = importdf()
