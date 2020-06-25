@@ -78,3 +78,10 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+  .map_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:400px;
+    width:100%;
+  }

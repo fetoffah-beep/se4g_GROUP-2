@@ -3,7 +3,15 @@ from flaskblog import app, db, bcrypt
 from flaskblog.forms import RegistrationForm, LoginForm, CommentForm
 from flaskblog.models import User, Comment
 from flask_login import login_user, current_user, logout_user, login_required
+from bokeh.embed import server_document
+import subprocess
 from flaskblog.contents import cont
+
+
+def bash_command(cmd):
+    subprocess.Popen(cmd, shell=True)
+bash_command('bokeh serve ./plotmap.py --allow-websocket-origin=127.0.0.1:5000')
+
 
 atama = cont()
 
@@ -55,7 +63,8 @@ def logout():
 @login_required
 def map():
     posts = Comment.query.all()
-    return render_template('map.html', title='Map', posts=posts)
+    script=server_document("http://localhost:5006/plotmap")
+    return render_template('mapcom.html', title='Map', posts=posts, bokS=script)
 
 @app.route('/map/comments', methods=['GET', 'POST'])
 @login_required
