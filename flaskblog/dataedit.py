@@ -4,7 +4,7 @@ import numpy as np
 
 
 # csv file from epicollect5
-raw_data = pd.read_csv(r"C:\Users\arlia\Documents\Python Scripts\form-1__plos.csv")
+raw_data = pd.read_csv(r"C:\Users\arlia\Documents\Python Scripts\SEGeo\GISProject_Group4\GISProject_Data\form-1__plos.csv")
 
 # renaming the data
 col_rename = {'ec5_uuid': 'Epicollect5_ID',
