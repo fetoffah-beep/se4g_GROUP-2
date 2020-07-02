@@ -27,3 +27,21 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f"Comment('{self.content}', '{self.date_posted}')"
+
+class Data(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    x = db.Column(db.Float, nullable=False)
+    y = db.Column(db.Float, nullable=False)
+    vm = db.Column(db.Float, nullable=False)
+    n = db.Column(db.Float, nullable=False)
+    Sr = db.Column(db.Float, nullable=False)
+    Wv = db.Column(db.Float, nullable=False)
+    Wi = db.Column(db.Float, nullable=False)
+    Ppk = db.Column(db.Float, nullable=False)
+    Wb = db.Column(db.Float, nullable=False)
+    fb = db.Column(db.Float, nullable=False)
+    Wa = db.Column(db.Float, nullable=False)
+    fsw = db.Column(db.Float, nullable=False)
+
+    def __repr__(self):
+        return f"Data('{self.x}', '{self.y}')"

@@ -1,10 +1,12 @@
 import pandas as pd
 import geopandas as gpd
 import numpy as np
-
+import io
+import requests
 
 # csv file from epicollect5
-raw_data = pd.read_csv(r"C:\Users\arlia\Documents\Python Scripts\SEGeo\GISProject_Group4\GISProject_Data\form-1__plos.csv")
+# data form-1__plos.csv can be obtained from \GISProject_Group4\GISProject_Data
+raw_data = pd.read_csv(r"..\GISProject_Data\form-1__plos.csv")
 
 # renaming the data
 col_rename = {'ec5_uuid': 'Epicollect5_ID',
